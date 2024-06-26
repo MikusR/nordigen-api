@@ -57,3 +57,7 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 2.6"
+
+gem "dotenv", "~> 3.1"
+
+gem "nordigen-ruby", "~> 2.2"
