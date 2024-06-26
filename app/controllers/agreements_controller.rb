@@ -12,6 +12,6 @@ class AgreementsController < ApplicationController
       init = client.init_session(redirect_url: redirect_url, institution_id: id, reference_id: uuid)
       puts init
       session[:requisition_id] = init["id"]
-      redirect_to init["link"]
+      redirect_to init["link"], allow_other_host: true
   end
 end
