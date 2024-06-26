@@ -9,6 +9,13 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  root "home#index"
+  get "results/", to: "results#index"
+  get "agreements/:id", to: "agreements#index"
+
+   get "/test", to: ->(env) {
+    req=ActionDispatch::Request.new(env)
+    puts "this goes to console"
+    puts req.params
+    [ 200, {}, [ "hello" ] ] }
 end
